@@ -7,6 +7,7 @@
   <title>Ingresar - Pokeman Bank</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
@@ -23,10 +24,11 @@
           </div>
           <div class="form-group">
             <label for="password">PIN</label>
-            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-            <a href="">Olvidé  mi contraseña</a>
+            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña"
+              pattern="\d{4}">
           </div>
-          <button type="submit" class=" col-12 btn btn-primary my-2">Ingresar</button>
+          <a href="#" id="pinOlvidado">He olvidado mi PIN</a>
+          <button type="submit" class="col-12 btn btn-primary my-2" ><a href="acciones.html" class="text-white">Ingresar</a></button>
         </form>
       </div>
     </div>
@@ -42,6 +44,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+  <script>
+    $('#pinOlvidado').click(function() {
+      swal.fire({
+        text: "Visite una de nuestras agencias",
+        timer: 10000,
+      });
+    });
+  </script>
 </body>
 
 </html>
