@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pago de servicio</title>
+    <title>Imprimir comprobantes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
 </head>
 
@@ -14,14 +14,14 @@
         <div class="row">
             <div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6 text-center">
                 <h5>Rigoberto Villalta</h5>
-                <p>Elija el comprobante a imprimit</p>
+                <p>Elija el comprobante a imprimir</p>
                 <p class="text-left"><a class="text-dark" href="acciones.html"><img
                             src="icons/keyboard_backspace-24px.svg" alt="retornar"> Retornar a pantalla principal</a>
                 </p>
                 <ul class="list-unstyled text-center">
                     <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12" id="lasts"">últimas
                                 Transacciones</button></a></li>
-                    <li><a href=" #"><button class="btn btn-primary my-2 px-5 col-12" id="saldos">Últimos pagos realizado</button></a>
+                    <li><a href=" #"><button class="btn btn-primary my-2 px-5 col-12" id="payments">Últimos pagos realizado</button></a>
                     </li>
                     <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">Saldos</button></a>
                     </li>
@@ -68,7 +68,7 @@
 
             pdf.fromHTML(document.getElementById("list-transactions"));
 
-            pdf.save('comprobante.pdf');
+            pdf.save('comprobante_transacciones.pdf');
         };
 
         var elementA = document.getElementById("lasts");
@@ -81,10 +81,10 @@
 
             pdf.fromHTML(document.getElementById("list-payments"));
 
-            pdf.save('comprobante.pdf');
+            pdf.save('comprobante_pagos.pdf');
         };
-        var elementB = document.getElementById("saldos");
-        elementB.addEventListener("click", onClick1);
+        var elementB = document.getElementById("payments");
+        elementB.addEventListener("click", onClick2);
     </script>
 </body>
 
