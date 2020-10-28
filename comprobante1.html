@@ -14,19 +14,10 @@
         <div class="row">
             <div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6 text-center">
                 <h5>Rigoberto Villalta</h5>
-                <p>Elija el comprobante a imprimir</p>
+                <p>Tome su comprobante</p>
                 <p class="text-left"><a class="text-dark" href="acciones.html"><img
                             src="icons/keyboard_backspace-24px.svg" alt="retornar"> Retornar a pantalla principal</a>
                 </p>
-                <ul class="list-unstyled text-center">
-                    <li><a href="comprobante1.html"><button class="btn btn-primary my-2 px-5 col-12" id="ultimas-transacciones"">últimas
-                                Transacciones</button></a></li>
-                    <li><a href="comprobante2.html"><button class="btn btn-primary my-2 px-5 col-12" id="pagos">Últimos pagos realizado</button></a>
-                    </li>
-                    <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">Saldos</button></a>
-                    </li>
-                    <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">Otro</button></a></li>
-                </ul>
             </div>
         </div>
     </div>
@@ -40,16 +31,6 @@
         </ul>
     </div>
 
-    <div class="d-none">
-        <ul id="lista-de-pagos">
-            <li>Pago Servicio - Tigo El Salvador $35.43 - 20/10/2020</li>
-            <li>Pago Tárjeta de crédito: 564939030 $85.00 - 28/09/2020</li>
-            <li>Pago Préstamo: 1067899038 $175.61 - 15/09/2020</li>
-            <li>Pago Servicio: UDB $70.00 - 26/10/2020</li>
-            <li>Pago membresía tarjeta de crédito: $35.00 - 27/10/2020</li>
-        </ul>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -58,7 +39,12 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>   
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+    <script src="js/generate_pdf.js"></script>
+    <script>
+        document.getElementById("ultimas-transacciones").onclick = generatePdf("lista-de-transacciones");
+    </script>
 </body>
 
 </html>
