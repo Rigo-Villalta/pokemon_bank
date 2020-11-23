@@ -7,6 +7,12 @@
   <title>Acciones - Pokeman Bank</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
+  <script src="js/localstorage.js"></script>  
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="js/validar_autenticacion.js"></script>
+  <script>
+    window.onafterprint = verificarAutenticacion();
+  </script>
 </head>
 
 <body>
@@ -55,10 +61,10 @@
           </p>
           <p class="text-center"><a class="text-dark" href="graficos.html">Ver gráfico de transacciones</a></p>
         </div>
-        <div class="col-6 col-sm-4 col-md-3 my-3">
-          <p class="text-center mb-0"><a href="login.html"><img src="icons/settings_power-black-18dp.svg" alt="incono-de-cuentas" style="height: 100px;"></a>
+        <div id="salir" class="col-6 col-sm-4 col-md-3 my-3">
+          <p class="text-center mb-0"><img src="icons/settings_power-black-18dp.svg" alt="incono-de-cuentas" style="height: 100px;">
           </p>
-          <p class="text-center"><a class="text-dark" href="login.html">Salir del sistema</a></p>
+          <p class="text-center">Salir del sistema</p>
         </div>
       </div>
     </div>
@@ -73,6 +79,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+    <script src="js/salida.js"></script>
 </body>
 
 </html>

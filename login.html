@@ -8,20 +8,22 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <script src="js/localstorage.js"></script>
+  </script>
 </head>
 
 <body>
-
   <div class="container login mt-5">
     <div class="row">
       <div class="col-12">
         <h4 class="mt-2 text-dark text-center">Banco Pokemon</h4>
         <small class="small">Ingrese sus datos para poder realizar consultas y transacciones.</small>
-        <form name="login_form" class="my-3">
+
+        <form name="formulario-ingreso" class="my-3" id="formulario-ingreso">
           <div class="form-group">
-            <label for="nombre">Tarjeta</label>
-            <input type="text" class="form-control" id="tarjeta" name="tarjeta"
-              placeholder="Ingrese su número de tarjeta">
+            <label for="nombre">Nombre de usuario</label>
+            <input type="text" class="form-control" id="usuario" name="usuario"
+              placeholder="Ingrese su nombre de usuario">
           </div>
           <div class="form-group">
             <label for="password">PIN</label>
@@ -29,9 +31,9 @@
                >
           </div>
           <a href="#" id="pinOlvidado">He olvidado mi PIN</a>
-          <button type="submit" class="col-12 btn btn-primary my-2"><a href="acciones.html"
-              class="text-white">Ingresar</a></button>
+          <button type="button" class="col-12 btn btn-primary my-2" id="ingresar">Ingresar</button>
         </form>
+
       </div>
     </div>
     <div class="row">
@@ -53,6 +55,7 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
   <script src="js/js_validate.js"></script>
+
   <script>
     $('#pinOlvidado').click(function () {
       swal.fire({
@@ -61,29 +64,9 @@
       });
     });
   </script>
+  
+  <script src="js/ingreso.js"></script> 
 
-  <script type="text/javascript">
-    var validator = new FormValidator('login_form', [{
-      name: 'tarjeta',
-      rules: 'required|numeric|min_length[16]|max_length[16]'
-    }, {
-      name: 'pin',
-      rules: 'required|numeric|min_length[4]|max_length[4]'
-    },],
-      function (errors, event) {
-        if (errors.length > 0) {
-          var errorList = document.getElementById("errors-list")
-          var errorString = '';
-          var errorLength = errors.length;
-          for (var i = 0;  i < errorLength; i++) {
-            var li = document.createElement("li");
-            var errorMessage = document.createTextNode(errors[i].message)
-            li.appendChild(errorMessage);
-            errorList.appendChild(li) ;
-          }
-        }
-      });
-  </script>
 </body>
 
 </html>
