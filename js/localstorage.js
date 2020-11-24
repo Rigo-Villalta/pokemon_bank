@@ -36,7 +36,7 @@ function transaccion(monto, descripcion, tipo) {
         saldoActual -= Number(monto);
         localStorage.setItem("saldo", saldoActual.toString());
     } else {
-        console.log("trasacción no valida");
+        console.log("trasacción no válida");
     }
 }
 
