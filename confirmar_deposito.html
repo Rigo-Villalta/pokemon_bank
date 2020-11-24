@@ -2,49 +2,65 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmar depósito</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/validar_autenticacion.js"></script>
+  <script>
+    window.onbeforeprint = verificarAutenticacion();
+  </script>
+  <title>Confirmar depósito</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
 
 <body>
 
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6 text-center">
-                <h5>Rigoberto Villalta</h5>
-                <p>Ingrese el dinero en el depósito físico y presione ok</p>
-                <ul class="list-unstyled text-center">
-                    <li><a href="#"><button class="btn btn-primary my-2 px-5" id="okButton">ok</button></a></li>
-                </ul>
-            </div>
-        </div>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+        <h5>Ash Ketchum</h5>
+        <p>Ingrese el monto de dinero a ingresar en múltiplos de 5 y presione ok.</p>
+        <form action=>
+          <div class="form-group">
+            <label for="cantidad">Cantidad</label>
+            <input type="text" class="form-control" id="cantidad" name="cantidad" placeholder="Ingrese la cantidad">
+          </div>
+          <button type="button" class="btn btn-primary my-2 px-5" id="okButton">ok</button>
+        </form>
+      </div>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <script>
-        $('#okButton').click(function () {
-            swal.fire({
-                title: "Depósito realizado",
-                text: "Se han depositado $220.00 a su Cuenta corriente 012374863 ",
-                timer: 10000,
-            }).then(function(result){
-                if(result.value){
-                    window.location = "acciones.html";
-                }
-            });
-        });
-    </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script src="js/localstorage.js"></script>
+  <script>
+    $('#okButton').click(function (){
+      let cantidad = document.getElementById("cantidad").value;
+      transaccion(cantidad, "Depósito a cuenta", "ingreso");
+    });
+  </script>
+  <script>
+    $('#okButton').click(function () {
+      let deposito = document.getElementById("cantidad").value;
+      swal.fire({
+        title: "Depósito realizado",
+        text: `Se ha realizado un depóstio por ${deposito}.00 a la cuenta`,
+        timer: 5000,
+      }).then(function (result) {
+        if (result.value) {
+          window.location = "acciones.html";
+        }
+      });
+    });
+  </script>
 </body>
 
 </html

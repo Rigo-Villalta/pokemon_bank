@@ -7,6 +7,10 @@
     <title>Confirmar depósito</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/validar_autenticacion.js"></script>
+    <script>
+        window.onbeforeprint = verificarAutenticacion();
+    </script>
 </head>
 
 <body>
@@ -23,7 +27,7 @@
                         <small>Usualmente el NPE está impreso en su factura.</small>
                     </div>
                 </form>
-                    <a href="#"><button class="btn btn-primary my-2 px-5" id="okButton">Realizar pago</button></a>
+                <a href="#"><button class="btn btn-primary my-2 px-5" id="okButton">Realizar pago</button></a>
             </div>
         </div>
     </div>
@@ -43,8 +47,8 @@
                 title: "Confirmar pago",
                 text: "Pagar $35.42 por CAESS - Servicio de Energía Eléctrica.",
                 timer: 10000,
-            }).then(function(result){
-                if(result.value){
+            }).then(function (result) {
+                if (result.value) {
                     window.location = "pago_realizado.html";
                 }
             });

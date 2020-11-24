@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pago realizado</title>
+    <script src="js/validar_autenticacion.js"></script>
+    <script>
+        window.onbeforeprint = verificarAutenticacion();
+    </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </head>
@@ -19,12 +23,12 @@
                 <ul class="list-unstyled text-center">
                     <li></li>
                 </ul>
-                <p><a href="acciones.html" class="text-dark"><img src="icons/print-24px.svg"
-                    alt="retornar"> Imprimir recibo</a></p>
-                    <p><a href="acciones.html" class="text-dark"><img src="icons/keyboard_backspace-24px.svg"
-                        alt="retornar"> Retornar a pantalla principal</a></p>
-                <p><a href="login.html" class="text-dark"><img src="icons/settings_power-black-18dp.svg"
-                    alt="retornar"> Cerrar sesión</a></p>
+                <p><a href="acciones.html" class="text-dark"><img src="icons/print-24px.svg" alt="retornar"> Imprimir
+                        recibo</a></p>
+                <p><a href="acciones.html" class="text-dark"><img src="icons/keyboard_backspace-24px.svg"
+                            alt="retornar"> Retornar a pantalla principal</a></p>
+                <p><a href="login.html" class="text-dark"><img src="icons/settings_power-black-18dp.svg" alt="retornar">
+                        Cerrar sesión</a></p>
             </div>
         </div>
     </div>
@@ -44,8 +48,8 @@
                 title: "Depósito realizado",
                 text: "Se han depositado $220.00 a su Cuenta corriente 012374863 ",
                 timer: 10000,
-            }).then(function(result){
-                if(result.value){
+            }).then(function (result) {
+                if (result.value) {
                     window.location = "acciones.html";
                 }
             });

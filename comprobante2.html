@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprimir comprobantes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
+    <script src="js/validar_autenticacion.js"></script>
+    <script>
+        window.onbeforeprint = verificarAutenticacion();
+    </script>
 </head>
 
 <body>

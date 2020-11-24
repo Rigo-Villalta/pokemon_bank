@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pago de servicio</title>
+  <script src="js/validar_autenticacion.js"></script>
+  <script>
+    window.onbeforeprint = verificarAutenticacion();
+  </script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
 </head>
 
@@ -16,11 +20,13 @@
         <h5>Rigoberto Villalta</h5>
         <p>Que tipo de servicio desea pagar</p>
         <p class="text-left"><a class="text-dark" href="acciones.html"><img src="icons/keyboard_backspace-24px.svg"
-          alt="retornar"> Retornar a pantalla principal</a></p>
+              alt="retornar"> Retornar a pantalla principal</a></p>
         <ul class="list-unstyled text-center">
-          <li><a href="confirmar_pago.html"><button class="btn btn-primary my-2 px-5 col-12">Pago con NPE &nbsp;</button></a></li>
+          <li><a href="confirmar_pago.html"><button class="btn btn-primary my-2 px-5 col-12">Pago con NPE
+                &nbsp;</button></a></li>
           <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">Escanear código de barras</button></a></li>
-          <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">Pago con número de teléfono o código de servicio</button></a></li>
+          <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">Pago con número de teléfono o código de
+                servicio</button></a></li>
           <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">pago de impuestos</button></a></li>
         </ul>
       </div>

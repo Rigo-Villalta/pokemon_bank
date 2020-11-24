@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/validar_autenticacion.js"></script>
+  <script>
+    window.onbeforeprint = verificarAutenticacion();
+  </script>
   <title>Saldos - Pokeman Bank</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
 </head>
@@ -13,7 +17,7 @@
   <div class="container my-5">
     <div class="row">
       <div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6 text-center">
-        <h5 class="col-12">Rigoberto Villalta</h5>
+        <h5 class="col-12" id="nombre">Rigoberto Villalta</h5>
         <p>Resumen de cuentas</p>
         <p class="text-left"><a class="text-dark" href="acciones.html"><img src="icons/keyboard_backspace-24px.svg"
               alt="retornar"> Retornar a pantalla principal</a></p>
@@ -30,23 +34,8 @@
           <tbody>
             <tr>
               <td>Cuenta corriente</td>
-              <td>012374863</td>
-              <td>$300.56</td>
-            </tr>
-            <tr>
-              <td>Cuenta de Ahorros</td>
-              <td>564939030</td>
-              <td>$1076.89</td>
-            </tr>
-            <tr>
-              <td>Tárjeta de crédito</td>
-              <td>564939030</td>
-              <td>-$805.33</td>
-            </tr>
-            <tr>
-              <td>Préstamo personal</td>
-              <td>1067899038</td>
-              <td>-$10,105.61</td>
+              <td id="cuenta"></td>
+              <td id="saldo"></td>
             </tr>
           </tbody>
         </table>
@@ -65,6 +54,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
+  <script src="js/saldos.js"></script>
 </body>
 
 </html>

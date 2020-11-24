@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imprimir comprobantes</title>
+    <script src="js/validar_autenticacion.js"></script>
+    <script>
+        window.onbeforeprint = verificarAutenticacion();
+    </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
 </head>
 
@@ -19,9 +23,11 @@
                             src="icons/keyboard_backspace-24px.svg" alt="retornar"> Retornar a pantalla principal</a>
                 </p>
                 <ul class="list-unstyled text-center">
-                    <li><a href="comprobante1.html"><button class="btn btn-primary my-2 px-5 col-12" id="ultimas-transacciones"">últimas
+                    <li><a href="comprobante1.html"><button class="btn btn-primary my-2 px-5 col-12"
+                                id="ultimas-transacciones"">últimas
                                 Transacciones</button></a></li>
-                    <li><a href="comprobante2.html"><button class="btn btn-primary my-2 px-5 col-12" id="pagos">Últimos pagos realizado</button></a>
+                    <li><a href=" comprobante2.html"><button class="btn btn-primary my-2 px-5 col-12"
+                                    id="pagos">Últimos pagos realizado</button></a>
                     </li>
                     <li><a href="#"><button class="btn btn-primary my-2 px-5 col-12">Saldos</button></a>
                     </li>
@@ -58,7 +64,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>   
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
