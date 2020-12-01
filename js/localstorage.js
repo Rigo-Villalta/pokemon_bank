@@ -27,13 +27,13 @@ function transaccion(monto, descripcion, tipo) {
     let saldoActual = Number(localStorage.saldo);
     if (tipo == "ingreso") {
         fechaHora = new Date().toLocaleString();
-        parseTransacciones.ingresos[descripcion + " - " + fechaHora] = monto;
+        parseTransacciones.ingresos[`${descripcion} - ${fechaHora}`] = monto;
         localStorage.setItem("transacciones", JSON.stringify(parseTransacciones));
         saldoActual += Number(monto);
         localStorage.setItem("saldo", saldoActual.toString());
     } else if (tipo == "egreso") {
         fechaHora = new Date().toLocaleString();
-        parseTransacciones.egresos[descripcion + " - " + fechaHora] = monto;
+        parseTransacciones.egresos[`${descripcion} - ${fechaHora}`] = monto;
         localStorage.setItem("transacciones", JSON.stringify(parseTransacciones));
         saldoActual -= Number(monto);
         localStorage.setItem("saldo", saldoActual.toString());
