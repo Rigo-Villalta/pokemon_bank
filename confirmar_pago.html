@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="js/validar_autenticacion.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script>
         window.onbeforeprint = verificarAutenticacion();
     </script>
@@ -19,15 +21,19 @@
         <div class="row">
             <div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
                 <h5>Rigoberto Villalta</h5>
-                <p>Ingrese el NPE del servicio que desea pagar</p>
-                <form action="" class="form">
+                <p>Ingrese el monto y descripción del servicio que desea pagar</p>
+                <form action="" id="pago" class="form">
                     <div class="form-group">
-                        <label for="npe">NPE</label>
-                        <input class="form-control" id="npe" name="npe" type="text" pattern="\d{16}">
-                        <small>Usualmente el NPE está impreso en su factura.</small>
+                        <label for="npe">Descripción</label>
+                        <input class="form-control" id="descripcion" name="npe" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="npe">Monto</label>
+                        <input class="form-control" id="monto" name="monto" type="text">
                     </div>
                 </form>
-                <a href="#"><button class="btn btn-primary my-2 px-5" id="okButton">Realizar pago</button></a>
+                <a href="#"><button type="button" class="btn btn-primary my-2 px-5" id="okButton">Realizar
+                        pago</button></a>
             </div>
         </div>
     </div>
@@ -41,15 +47,24 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+
+    <script src="js/localstorage.js"></script>
     <script>
         $('#okButton').click(function () {
+            let cantidad = document.getElementById("monto").value;
+            transaccion(cantidad, "Pago de servicio", "egreso");
+        });
+    </script>
+    <script>
+        $('#okButton').click(function () {
+            let monto = document.getElementById("monto").value;
             swal.fire({
-                title: "Confirmar pago",
-                text: "Pagar $35.42 por CAESS - Servicio de Energía Eléctrica.",
-                timer: 10000,
+                title: "Pago realizado",
+                text: `Se ha realizado un pago por ${monto}.00 a la cuenta`,
+                timer: 5000,
             }).then(function (result) {
                 if (result.value) {
-                    window.location = "pago_realizado.html";
+                    window.location = "acciones.html";
                 }
             });
         });
